@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Button from './Button/Button';
+// @ts-ignore
+const tg = window.Telegram.WebApp
 
 function App() {
+// method ready говорито том, что приложение проинициализировано
+  React.useEffect(() => {       
+    tg.ready()
+  }, [])
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button/>
+     <h1>Привет Медвед.</h1>
     </div>
   );
 }
